@@ -1,0 +1,206 @@
+----Apuntes----
+
+Tipos de datos primitivos:
+
+Tipo 		Tamaño 	Rango
+byte 		8 		-128 a 127
+short 	16 		-32.768 a 32.767
+int 		32 		-2.147.483.648 a 2.147.483.647
+long 		64 		-9.223.372.036.854.775.808 a 9.223.372.036.854.775.8087
+float 	32 		+/- 3.4E+38F (6-7 dígitos importantes)
+double 	64 		+/- 1.8E+308 (15 dígitos importantes)
+boolean 	16 		True o False
+char 		8 		Conjunto de caracteres UNICODE ISO
+------------------------------------------------------------------------------------------------------------------------
+Tipos de datos enteros:
+	-Los números enteros se escriben tal cual, salvo si es de tipo long, que se añade una L mayúscula.
+
+Tipos de datos decimales:
+	-Se añade una F indicando que es un float. 
+	-Se añade una D en caso de querer un double.
+
+Tipos de datos: booleanos:
+	-Si al declarar un valor booleano no se le da valor inicial, se toma como valor inicial false.
+	-Podemos definir un booleano a traves de condionces:
+		boolean igual;
+		igual = numA == numB	//En este caso igual sera True en caso de  numA y numB contengan el mismo valor
+	
+Tipos de datos: caracteres:
+	-Los valores de tipo carácter sirven para almacenar símbolos de escritura.
+
+		char letra;
+		letra='C'; //Los caracteres van entre comillas
+
+	También hay una serie de caracteres especiales que van precedidos por el símbolo \, son estos:
+
+	Caracter 	Significado
+	\b 		Retroceso
+	\t 		Tabulador
+	\n 		Nueva linea
+	\r 		Retorno de carro
+	" 		Dobles comillas
+	' 		Comillas simples
+	\ 		Barra inclinada
+------------------------------------------------------------------------------------------------------------------------
+Conversión entre tipos (casting):
+	-El uso del operador de casting sirve para poder realizar asignaciones entre tipos distintos en el caso de que 
+	 igualemos un tipo de dato a uno superior a el.
+
+		//error		//correcto
+		int a=1; 		int a=1; 
+		byte b; 		byte b;
+		b=a; 			b= (byte) a;
+
+	-Aunque el resultado es 100, en caso de que la operacion resultante supere el valor maximo del tipo de dato 
+	 asigando debemos hacer un casting del tipo de dato para no alterar la variable. 
+
+		//error				//correcto
+		byte n1=100, n2=100, n3;	byte n1=100, n2=100, n3;
+		n3= n1 * n2 /100; 		n3 = (byte) (n1 * n2 / 100);
+------------------------------------------------------------------------------------------------------------------------
+Ámbito de las variables:
+	-Las variables tiene un ciclo de vida este se rige por el bloque en el que esta declarada la variable, una vez 
+	 el bloque finaliza la variable es borrada por completo.
+------------------------------------------------------------------------------------------------------------------------
+Operadores:
+	-Los datos se manipulan muchas veces utilizando operaciones con ellos. Tenemos los siguientes tipos:
+
+   	Aritméticos:									
+	+ Suma dos operandores, - Resta dos operandores, * Multiplica dos operandores, / Divide dos operadores y
+	% Calcula el resto de dividir dos operadores
+
+    	Incrementales
+	Operador 	Uso 	Descripción						int x = 5, y = 5; 
+	++ 		x++ 	Incrementa x en 1. Evalúa antes.		System.out.println(++x); // imprime 6 
+	++ 		++x 	Incrementa x en 1. Evalúa después.		System.out.println(x); // imprime 6 
+	– 		x– 	Decrementa x en 1. Evalúa antes.		System.out.println(y++); // imprime 5
+	– 	–	x 	Decrementa x en 1. Evalúa después		System.out.println(y); // imprime 6
+
+
+	Relacionales
+	Operador 	Uso 		Devuelve verdadero
+	> 		x>y 		x es mayor que y
+	>= 		x>=y 		x es mayor o igual que y
+	< 		x< y 		x es menor que y
+	<= 		x<=y 		x es menor o igual que y
+	== 		x==y 		x es igual a y
+	!= 		x!=y 		x es distinto de y
+
+	Lógicos
+	Operador 	Uso 					Devuelve verdadero
+	&&(and) 	condicion1&&condicion2 		condicion1 y condicion2 verdaderas
+	||(or) 	condicion1||condicion2 		condicion1 o condicion2 verdaderas
+	!(not) 	!condicion 				condicion falsa
+
+	De asignación
+	Operador 	Uso 		Descripción
+	= 		x=y 		Asigna a x el valor de y
+	+= 		x+=valor 	Equivalente a x=x+valor
+	-= 		x-=valor 	Equivalente a x=x-valor
+	*= 		x*=valor 	Equivalente a x=x*valor
+	/= 		x/=valor 	Equivalente a x=x/valor
+
+	Ternario
+	-Este operador devuelve un valor que se selecciona de dos posibles.
+	 La selección dependerá de la condicion y puede tomar dos valores: verdadero o falso.
+
+	-Sintaxis:
+
+		expresioncondicional ? valor1 : valor2
+
+		Ejemplo:
+		int a,b;
+		a=3<5 ? 1 : -1; //3<5 es cierto: así que a toma el valor 1.
+		b= a == 7 ?10:20; // a (que vale 1) == 7 es falso, así que b toma el valor 20
+------------------------------------------------------------------------------------------------------------------------
+Constantes:
+	-Una constante es una variable de sólo lectura, que no puede variar.
+
+	-Sintaxis:
+
+		final double PI=3.141591;
+		PI=4; //Error, no podemos cambiar el valor de PI
+
+	-Como medida aconsejable, los nombres de las constantes deberían ir en mayúsculas.
+------------------------------------------------------------------------------------------------------------------------
+Escritura por pantalla:
+	-Instrucciones que podemos utilizar para escribir por pantalla:
+
+    		System.out.println (Saca la información en pantalla e introduce un salto de línea)
+    		System.out.print (Saca la información en pantalla, pero no realiza un salto de línea)
+    		System.out.printf (Saca la información en pantalla con un determinado formato)
+
+	Orden printf
+	-La orden printf() utiliza unos códigos de conversión para indicar de qué tipo es el contenido a mostrar.
+	-Estos códigos se caracterizan porque llevan delante el símbolo %. Algunos de ellos son:
+
+    		%c: Escribe un carácter
+    		%s: Escribe una cadena de texto.
+    		%d: Escribe un entero.
+    		%f: Escribe un número en punto flotante.
+    		%e: Escribe un número en punto flotante en notación científica. 
+
+		Ejemplo:
+
+    		System.out.printf("% ,.2f\n", 12345.1684); //Mostraría el número 12.345,17 por pantalla.
+------------------------------------------------------------------------------------------------------------------------
+Lectura por teclado:
+	-Clase JOptionPane:
+		El dato que recogemos con esta funcion es un tipo String 
+
+		import javax.swing.JOptionPane;
+
+		String texto; //variable para almacenar los datos recogidos por la caja de texto
+		int num;
+		texto =JOptionPane.showInputDialog(“Escriba un numero”);
+		num = Integer.parseInt(texto);
+
+		Para convertir los datos al tipo que nosotros deseamos usaremos:
+
+		Integer.parseInt convierte a int
+		Short.parseShort convierte a short
+		Byte.parseByte convierte a byte
+		Long.parseLong convierte a long
+		Float.parseFloat convierte a float
+		Double.parseDouble convierte a double
+		Boolean.parseBoolean convierte a boolean
+
+	-Clase System:
+		InputStreamReader: Captura los bytes del buffer (System.in) y los convierte a caracteres.
+		BufferedReader: Clase que proporciona un método que permite leer hasta el final de la línea.		
+
+		InputStreamReader isr = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(isr);
+		System.out.print("Introduce el texto: ");
+		String cad = br.readLine();
+		int num = Integer.parseInt(cad));
+
+	-Clase Scanner:
+		import java.util.Scanner
+
+		String 
+		Scanner teclado = new Scanner(System.in);
+		System.out.println("Nombre: ");
+		nombre=teclado.nextLine();
+------------------------------------------------------------------------------------------------------------------------
+Tipos enumerados:
+	Los enumerados vas definidos entre {} y en MAYUSCULAS
+	
+	-Dentro del main:
+
+		enum TamanoDeCafe{PEQUEÑO,MEDIANO,GRANDE};
+		TamanoDeCafe tdc;
+		tdc = TamanoDeCafe.MEDIANO;
+
+	-Fuera del main:
+		
+		public class Main {
+  			enum Level {
+    				LOW, MEDIUM, HIGH
+  			}	
+
+  			public static void main(String[] args) {
+    				Level myVar = Level.MEDIUM; 
+    				System.out.println(myVar);
+  			}
+		}

@@ -1,0 +1,164 @@
+----Apuntes----
+
+If
+
+if(nota>=5)
+{
+	System.out.println("Aprobado");
+	aprobados++;
+}
+else 
+{
+	System.out.println("Suspenso");
+	suspensos++;
+}
+
+If con anidacion 
+
+if (x == 1) {
+            // Instrucciones
+        } else {
+            if (x == 2) {
+                //instrucciones
+            } else {
+                if (x == 3) {
+                    //instrucciones
+                }
+            }
+        }
+
+Otra forma mas clara de hacerlo es: 
+
+if (x==1) 
+{
+      instrucciones
+      …
+}
+else if (x==2) 
+{
+       instrucciones
+       …
+}
+else if (x==3) 
+{
+        instrucciones
+        …
+}
+
+------------------------------------------------------------------------------------------------------------------------
+
+Switch
+
+int diasemana=1;
+String texto;
+switch (diasemana) { 
+     case 1:
+           texto=”Lunes”; 
+     break; 
+     case 2:
+           texto=”Martes”; 
+     break; 
+     case 3:
+           texto=”Miércoles”; 
+     break; 
+     case 4:
+           texto=”Jueves”; 
+     break; 
+     case 5:
+        texto=”Viernes”; 
+    break; 
+    case 6:
+       texto=”Sábado”; 
+    break; 
+    case 7:
+        texto=”Domingo”; 
+    break; 
+    default: 
+         texto=”?”; 
+} 
+
+Otra sintaxis de la expresión es:
+
+int diasemana=1;
+String texto;
+texto = switch (diasemana) {
+            case 1 -> "Lunes";
+            case 2 -> "Martes";
+            case 3 -> "Miércoles";
+            case 4 -> "Jueves";
+            case 5 -> "Viernes";
+            case 6 -> "Sábado";
+            case 7 -> "Domingo";
+            default -> "?";
+};
+
+------------------------------------------------------------------------------------------------------------------------
+
+While
+
+int i=1;
+while (i<=100)
+{
+         System.out.println(i);
+         i++;
+}
+
+	- Bucles con contador:
+
+	i=10; //Valor inicial del contador, empieza valiendo 10 (por supuesto i debería estar declarada como entera, int) 
+	while (i<=200) {  //mientras i sea menor de 200, el bucle se repetirá, cuando i supere este valor, el bucle termina
+      	System.out.println(i);	//acciones que ocurren en cada vuelta del bucle. 
+                                   	//En este caso simplemente escribe el valor del contador
+        	i+=10;               	//Variación del contador, en este caso cuenta de 10 en 10
+	}
+
+	- Bucles centinela:
+
+	boolean salir=false; /* En este caso el centinela es una variable booleana que inicialmente vale falso */
+	int n;
+	while(salir==false){		// Condición de repetición: que salir siga siendo falso. Ese es el centinela. 
+      	n=(int)Math.floor(Math.random()*499+1); 	// Lo que se repite en el bucle:
+        	System.out.println(i); 	// calcular un número aletorio de 1 a 500 y escribirlo
+        	salir=(i%7==0);   	//El centinela vale verdadero si el número es múltiplo de 7 
+	}
+
+------------------------------------------------------------------------------------------------------------------------
+
+Do while
+
+int i=0;
+do 
+{
+      i++;
+      System.out.println(i);
+} while (i<1000);		//cuando i no cumpla esa condicion el bucle acabara
+
+------------------------------------------------------------------------------------------------------------------------
+
+For
+
+for(int i=1;i<=1000;i++) {	//Mientras i sea menor o igual a 1000 se repetira el bucle
+    System.out.println(i);
+}
+
+------------------------------------------------------------------------------------------------------------------------
+
+Numeros aleatorios:
+
+Clase Math:
+int x= (int) Math.floor(Math.random()*N);
+// x será un número entre 0 y N-1
+int x= (int) Math.floor(Math.random()*N)+1;
+// x será un número entre 1 y N
+int x= (int) Math.floor(Math.random()*(M-N+1))+N;
+//x será un número entre M y N ambos incluidos y siendo M mayor que N
+
+Clase Random:
+import java.util.Random;
+Random r = new Random();
+int y= r.nextInt(N);
+// y será un número entre 0 y N-1
+int y= r.nextInt(N)+1;
+// y será un número entre 1 y N
+int y= rand.nextInt(M-N+1)+N;
+//y será un número entre M y N ambos incluidos y siendo M mayor que N

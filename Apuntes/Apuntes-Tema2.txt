@@ -1,0 +1,131 @@
+----Apuntes----
+
+Cadenas:
+Las cadenas son una clase, pero se pueden tratar como un dato primitivo inicialmente, 
+realmente provoca una nueva instanciación interna pero es transparente para nosotros.
+Los Strings en Java, se representan con comillas dobles
+—---------------------------------------------------------------------------------------------------------------------
+Métodos de la clase String:
+
+charAt(posición): Extrae un único carácter.
+
+length(): Obtienes la longitud de de la cadena.
+
+substring(posIni, posFin): Obtienes una cadena con las posiciones que eliges 
+*posFin = número de posiciones adicionales que quieres seleccionar contando + posIni.
+
+equals(cadena): Comprueba si dos cadenas son iguales distingue mayúsculas y 
+minúsculas.
+
+equalsIgnoreCase(cadena): Comprueba si dos cadenas son iguales sin distinguir 
+mayúsculas de minúsculas.
+
+compareTo(cadena): Comprueba si dos cadenas son iguales devuelve un entero >0, <0 o 
+=0 en caso de que sea =0 las cadenas son iguales.
+
+startsWith(subcadena) y endsWith(subcadena): para comprobar si una cadena comienza 
+o finaliza con una subcadena determinada.
+
+trim(): elimina los espacios en blanco de una cadena que tenga por delante o por detrás. No 
+elimina los espacios intermedios.
+
+toUpperCase() y toLowerCase(): me permite cambiar todos los caracteres por 
+mayúsculas o minúsculas.
+
+indexOf(cadenaABuscar): permite buscar una cadena dentro de otra.
+
+indexOf(cadenaABuscar,posicion): igual que la anterior, pero desde una posición 
+determinada.
+
+replace(cadenaABuscar, cadenaSustituta): permite reemplazar una cadena por otra.
+
+lastIndexOf (String cad): Retorna la posición de la última ocurrencia de la cadena dada como 
+parámetro.
+
+lastIndexOf (String cad,int ini): Retorna la posición de la última ocurrencia de la cadena dada 
+como parámetro buscando en retroceso a partir de la posición dada como parámetro.
+—---------------------------------------------------------------------------------------------------------------------
+Conceptos de la POO.
+Una clase es una plantilla. Define de manera genérica cómo van a ser los objetos de determinado tipo.
+Instanciar una clase consiste en crear un nuevo objeto concreto de la misma.
+Ejemplo: La clase Persona, creamos los objetos María y Pedro que son instancias de la 
+clase
+
+Encapsulación:
+Trata de aislar la información que este dentro de éste, sólo se puede acceder a ellos a 
+través de los miembros que la clase proporcione (propiedades y métodos).
+
+Abstracción:
+Abstrae de la complejidad que haya dentro dándonos una serie de atributos y 
+comportamientos (propiedades y funciones) que podemos usar sin preocuparnos de qué 
+pasa por dentro cuando lo hagamos.
+
+Herencia: 
+Si una clase hereda de otra obtiene todos los rasgos que tuviese la primera y añade otros 
+nuevos y además también puede modificar algunos de los que ha heredado.
+A la clase de la que se hereda se le llama clase base, y a la clase que hereda de ésta se le 
+llama clase derivada.
+
+Polimorfismo: 
+Se refiere al hecho de que varios objetos de diferentes clases, pero con una base común, se 
+pueden usar de manera indistinta, sin tener que saber de qué clase exacta son para poder 
+hacerlo.
+
+Modularidad: 
+La modularidad es la descomposición del sistema en un conjunto de “piezas” (módulos). La 
+realización de un diseño modular consiste en descomponer el sistema en módulos (clases).
+Criterios para valorar un diseño modular:
+Cohesión: grado de relación entre los elementos de cada módulo
+Acoplamiento: grado de interrelación entre los distintos módulos
+Buen diseño => alta cohesión y bajo acoplamiento
+—-------------------------------------------------------------------------------------------------------------------
+Objetos:
+
+Constructor: 
+Es un método especial que se utiliza para inicializar un objeto. Podemos tener más de un 
+constructor en nuestra clase, y se distinguirán por el número de parámetros que tengan, a 
+esto se lo denomina sobrecarga.
+
+Constructor copia: 
+Recibe por argumento un objeto del mismo tipo, y le asigna los valores del objeto pasado por 
+parámetro.
+
+La palabra reservada this: 
+Se utiliza para resolver ambigüedades cuando existen atributos con el mismo nombre que 
+alguna variable local o parámetro.
+
+Métodos get y set: 
+Sirven para obtener o para modificar los atributos de una clase.
+
+Operador “.”:
+Se utiliza para acceder a los miembros de una clase.
+
+Modificadores de acceso:
+Se trata de una palabra que antecede a la declaración de una clase, método o propiedad de 
+clase, visibilidad de cada especificador:
+public: La misma clase ,otra clase del mismo paquete, subclase de otro paquete y otra clase 
+de otro paquete.
+protected: La misma clase ,otra clase del mismo paquete y subclase de otro paquete.
+default: La misma clase  y otra clase del mismo paquete.       
+private: La misma clase.      
+
+Atributos:
+Cuando se definen los datos de una determinada clase, se debe indicar el tipo de atributo 
+que es (String, int, double, …) y el especificador de acceso (public, private,…).
+
+Atributos finales:
+Los atributos de una clase pueden utilizar el modificador final, para que se conviertan en 
+valores no modificables en el objeto.
+
+Métodos:
+Tienen varias partes: visibilidad, tipo de datos o objeto, identificador, parámetros y el cuerpo.
+
+Sobrecarga de métodos:
+Podemos tener varios métodos con el mismo nombre pero con diferentes parámetros.
+
+Métodos estáticos:
+Un método estático es aquel que no requiere de ningún objeto para ejecutarse y, por tanto, 
+no puede utilizar ningún atributo que no sea estático.
+
+Métodos recursivos:
+La idea parte de que un método puede invocarse a sí mismo.
