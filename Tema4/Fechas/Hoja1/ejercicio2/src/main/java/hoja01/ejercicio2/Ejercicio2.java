@@ -12,6 +12,13 @@ public class Ejercicio2 {
 
     public static void main(String[] args) {
         Veterinario manuel = new Veterinario();
-        manuel.anadir(carlos);
+        Mascota gato1 = new Mascota("Lana",10,02,2018);
+        manuel.anadir(gato1);
+        Mascota gato2 = new Mascota("Akane",20,01,2020);
+        manuel.anadir(gato2);
+        Mascota gato3 = new Mascota("Mia",24,10,2015);
+        manuel.anadir(gato3);
+        System.out.println(manuel.mostrar());
+        System.out.println(manuel.mostrarMayores());
     }
 }

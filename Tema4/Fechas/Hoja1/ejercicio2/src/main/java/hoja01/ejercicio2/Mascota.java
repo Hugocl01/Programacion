@@ -6,6 +6,7 @@ package hoja01.ejercicio2;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -18,7 +19,9 @@ public class Mascota {
 
     public Mascota(String nombre, int anio, int mes, int dia) {
         this.nombre = nombre;
-        this.fechaNacimiento = fechaNacimiento;
+        DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        String fecha = String.valueOf(anio) + "-" + String.valueOf(mes) + "-" + String.valueOf(dia);
+        this.fechaNacimiento = LocalDate.parse(fecha, formato);
     }
 
     public long getEdad() {
