@@ -38,7 +38,9 @@ public class Operaciones {
     public int suma() {
         int suma = 0;
         for (int i = 0; i < num.length; i++) {
-            suma += num[i];
+            if(i/2==0) {
+                suma += num[i];
+            }
         }
         return suma;
     }

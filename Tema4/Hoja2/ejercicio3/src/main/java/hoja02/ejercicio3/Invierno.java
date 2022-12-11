@@ -31,18 +31,24 @@ public class Invierno {
         return suma / temp.length;
     }
 
-    public double fahrenheit() {
+    public double[] fahrenheit() {
         double[] fahrenheit = new double[temp.length];
         for (int i = 0; i < temp.length; i++) {
             fahrenheit[i] = temp[i] * 1.8 + 32;
         }
-        return   fahrenheit ;
+        return fahrenheit ;
     }
 
     public String mostrar(double temp[]) {
-        String cadena = "Las temperaturas son: ";
+        String cadena = "";
         for (int i = 0; i < temp.length; i++) {
-            cadena.concat()
+            cadena+=temp[i]+" ";
         }
+        return cadena;
     }
+
+    public double[] getTemp() {
+        return temp;
+    }
+    
 }
