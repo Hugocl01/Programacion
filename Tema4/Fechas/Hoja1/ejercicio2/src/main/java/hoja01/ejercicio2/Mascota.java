@@ -5,6 +5,7 @@
 package hoja01.ejercicio2;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 /**
  *
@@ -20,13 +21,13 @@ public class Mascota {
         this.fechaNacimiento = fechaNacimiento;
     }
 
-    public int getEdad() {
-
+    public long getEdad() {
+        return ChronoUnit.YEARS.between(LocalDate.now(), fechaNacimiento);  //Años entre fecha actual y fecha de nacimiento
     }
 
     @Override
     public String toString() {
-        return "Mascota{" + "nombre=" + nombre + ", fechaNacimiento=" + fechaNacimiento + '}';
+        return "Mascota{" + "nombre=" + nombre + ", Fecha de nacimiento=" + fechaNacimiento + '}';
     }
 
 }
