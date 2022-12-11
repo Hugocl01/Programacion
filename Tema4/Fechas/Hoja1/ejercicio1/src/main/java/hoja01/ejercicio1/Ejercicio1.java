@@ -14,19 +14,22 @@ public class Ejercicio1 {
         //Creamos un array de la clase Letra
         Letra arrayLetras[] = new Letra[3];
         //Creamos un objeto en cada posicion
+        System.out.println("Datos de la 1º letra");
         arrayLetras[0] = new Letra();
+        System.out.println("Datos de la 2º letra");
         arrayLetras[1] = new Letra();
+        System.out.println("Datos de la 3º letra");
         arrayLetras[2] = new Letra();
 
         for (int i = 0; i < arrayLetras.length; i++) {
             if (arrayLetras[i].vencida()) {  //En caso de que la letra este vencida
                 System.out.println(arrayLetras[i].mostrar());   //Saca los datos de la letra
-                if () {
-                    arrayLetras[i].demora(15); //Demora 15 dias si la letra vencio en enero
+                if (arrayLetras[i].DevuelveMes() == 1) { //En caso de que la letra vencio en enero
+                    arrayLetras[i].demora(15); //Demora 15 dias
                 }
             } else {    //En caso de que la letra no este vencida
-                System.out.println(arrayLetras[i].getTitular());    //Saca el titular 
-                System.out.println(arrayLetras[i].diasFaltan());    //Saca el nº de dias que faltan
+                System.out.println("El titular es: " + arrayLetras[i].getTitular());    //Saca el titular 
+                System.out.println("Los dias que faltan son: " + arrayLetras[i].diasFaltan());    //Saca el nº de dias que faltan
             }
         }
     }

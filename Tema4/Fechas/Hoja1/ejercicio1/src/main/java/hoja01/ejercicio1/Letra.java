@@ -29,9 +29,9 @@ public class Letra {
         this.titular = new Scanner(System.in).nextLine();
         System.out.println("Introduce el importe:");
         this.importe = teclado.nextDouble();
-        System.out.println("Introduce la fecha con formato dd-mm-yyyy:");
+        System.out.println("Introduce la fecha de vencimiento  con formato dd-mm-yyyy:");
         DateTimeFormatter formato= DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        LocalDate fecha=LocalDate.parse(teclado.nextLine(), formato);
+        this.fechaVencimiento=LocalDate.parse(new Scanner(System.in).nextLine(), formato);
     }
     
     public boolean vencida(){
@@ -41,7 +41,7 @@ public class Letra {
     
     public void demora(int dias) {
         fechaVencimiento =  fechaVencimiento.plusDays(dias);
-        System.out.println("La fecha de vencimiento es: " + fechaVencimiento.toString());
+        System.out.println("La fecha de vencimiento tras la demora es: " + fechaVencimiento.toString());
     }
     
     public long diasFaltan() {
