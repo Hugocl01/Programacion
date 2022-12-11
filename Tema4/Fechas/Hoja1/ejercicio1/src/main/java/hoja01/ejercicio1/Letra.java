@@ -59,4 +59,9 @@ public class Letra {
         int mes = fechaVencimiento.getMonthValue();
         return mes;
     }
+
+    public String getTitular() {
+        return this.titular;
+    }
+    
 }
