@@ -28,31 +28,50 @@ public class Ejercicio1 {
             System.out.println("Intruduce una opcion:");
             opcion = teclado.nextInt();
 
-            System.out.println("fila");
-            int fila = 0;
-            for (int i = fila; i < matriz1.length; i++) {
-                System.out.println(matriz1[fila][i]);
-            }
-
-            System.out.println("columna");
-            int colum = 0;
-            for (int i = fila; i < matriz1.length; i++) {
-                System.out.println(matriz1[i][colum]);
-            }
-
-            System.out.println("diagonal");
-            for (int i = 0; i < matriz1.length; i++) {
-                System.out.println(matriz1[i][i]);
-            }
-
-            System.out.println("diagonal inversa");
-            for (int i = matriz1.length - 1; i >= 0; i--) {
-                System.out.println(matriz1[i][i]);
-            }
-            
-            System.out.println("diagonal hacia arriba");
-            for (int i = matriz1.length - 1, j = matriz1.length -1; i >= 0; i--, j--) {
-                System.out.println(matriz1[i][i]);
+            switch (opcion) {
+                case 1 -> {
+                    System.out.println("Introduce la fila");
+                    int fila = teclado.nextInt() - 1;
+                    if (fila < matriz1.length - 1 && fila >= 0) {
+                        for (int i = 0; i < matriz1[fila].length; i++) {
+                            System.out.println(matriz1[fila][i]);
+                        }
+                    } else {
+                        System.out.println("El numero de fila no es valido");
+                    }
+                }
+                case 2 -> {
+                    System.out.println("Introduce la columna");
+                    int colum = teclado.nextInt() - 1;
+                    if (colum < matriz1[colum].length - 1 && colum >= 0) {
+                        for (int i = 0; i < matriz1.length; i++) {
+                            System.out.println(matriz1[i][colum]);
+                        }
+                    } else {
+                        System.out.println("El numero de columna no es valido");
+                    }
+                }
+                case 3 -> {
+                    for (int i = 0 , j = 0; i < matriz1.length; i++ , j++) {
+                        System.out.println(matriz1[i][j]);
+                    }
+                }
+                case 4 -> {
+                    for (int i = matriz1.length - 1, j= matriz1[i].length - 1; i >= 0 && j >= 0; i--, j--) {
+                        System.out.println(matriz1[i][j]);
+                    }
+                }
+                case 5 -> {
+                    for (int i = matriz1.length - 1, j = 0; i >= 0 && j < matriz1[i].length; i--, j++) {
+                        System.out.println(matriz1[i][j]);
+                    }
+                }
+                case 6 -> {
+                    System.out.println("Has salido del programa");
+                }
+                default -> {
+                    System.out.println("El numero no es valido");
+                }
             }
         } while (opcion != 6);
     }
