@@ -13,6 +13,6 @@ public class Ejercicio2 {
 
     public static void main(String[] args) {
         Sopa sopa1 = new Sopa();
-        sopa1.mostar();;
+        sopa1.mostar();
     }
 }
