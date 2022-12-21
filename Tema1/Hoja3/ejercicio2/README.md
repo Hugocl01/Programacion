@@ -1,6 +1,6 @@
 # Tema1-Hoja03-ej2
 
-2. Escribe un programa que tome como entrada un número entero e indique que cantidad hay que sumarle para que el resultado sea múltiplo de 7.
+Escribe un programa que tome como entrada un número entero e indique que cantidad hay que sumarle para que el resultado sea múltiplo de 7.
 Un ejemplo:
 * A 2 hay que sumarle 5 para que el resultado sea múltiplo de 7.
 * A 13 hay que sumarle 1 para que el resultado sea múltiplo de 7.
