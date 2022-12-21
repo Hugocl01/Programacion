@@ -1,6 +1,6 @@
 # Tema1-Hoja01-ej3
 
-3.- Indica los errores presentes en el siguiente código, corrígelos y realiza la ejecución del programa:
+Indica los errores presentes en el siguiente código, corrígelos y realiza la ejecución del programa:
 ```
 /*
 Ejercicio3.java
