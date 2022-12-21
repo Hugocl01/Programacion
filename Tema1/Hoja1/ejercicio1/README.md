@@ -1,6 +1,6 @@
 # Tema1-Hoja01-ej1
 
-1.- Dado el siguiente programa, modifícalo para utilizar las variables que se indican. El
+Dado el siguiente programa, modifícalo para utilizar las variables que se indican. El
 tipo de dato elegido debe ser el de menos bits posibles que puedan representar el
 valor.
 Justifica tu elección.
