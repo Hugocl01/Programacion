@@ -1,6 +1,6 @@
 # Tema1-Hoja02-ej5
 
-5. Realizar un programa que declare una variable precio, le asigne el valor 62.5, este valor debe ser pedido por pantalla (utiliza la clase JOptionPane) y visualice:
+Realizar un programa que declare una variable precio, le asigne el valor 62.5, este valor debe ser pedido por pantalla (utiliza la clase JOptionPane) y visualice:
 
 ```
 El precio sin IVA es: 62,50
