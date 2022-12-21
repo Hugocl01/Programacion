@@ -1,6 +1,6 @@
 # Tema1-Hoja01-ej2
 
-2.- Realiza las siguientes modificaciones en el programa anterior:
+Realiza las siguientes modificaciones en el programa anterior:
 * a. Añade comentarios, entre otros:
   * Nombre de clase, descripción y autor
   * Comentario para la clase main y para cada una de las llaves de cierre
