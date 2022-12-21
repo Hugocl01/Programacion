@@ -1,6 +1,6 @@
 # Tema1-Hoja02-ej2
 
-2. Indica la salida por pantalla del siguiente programa:
+Indica la salida por pantalla del siguiente programa:
 ```
 public class Ejercicio2 {
     public static void main(String [] args){
