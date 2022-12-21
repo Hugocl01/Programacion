@@ -1,6 +1,6 @@
 # Tema1-Hoja01-ej5
 
-5.- Diseña un programa Java de nombre ejercicio5 que calcule la suma, resta, multiplicación y división de dos números introducidos por teclado. Incorpora también las funciones que permitan realizar la potencia del primer número y la raíz cuadrada.
+Diseña un programa Java de nombre ejercicio5 que calcule la suma, resta, multiplicación y división de dos números introducidos por teclado. Incorpora también las funciones que permitan realizar la potencia del primer número y la raíz cuadrada.
 
 Ejemplo salida del programa para x=9, y=3:
 ```
