@@ -44,6 +44,30 @@ public class Sopa {
     }
 
     public void setPalabra(String palabra, int x, int y, int d) {
+        switch (d) {
+            case 1 ->
+                for (int i = 0; i < array.length; i++) {
+                    if(x==i){
+                        array[i][]
+                    }
+                }
+            case -1 ->
+                if(){
+                    
+                }
+            default -> System.out.println("No has introducido el numero correcto");
+        };
+        
+        if (d == 1) {
+            for (int i = 0; i < 10; i++) {
 
+            }
+        } else if (d == -1) {
+            for (int i = 0; i < 10; i++) {
+
+            }
+        } else {
+            System.out.println("No has introducido el numero correcto");
+        }
     }
 }

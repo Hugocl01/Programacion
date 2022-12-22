@@ -14,6 +14,7 @@ public class Figura {
     private char letra;
 
     public Figura(char caracter, int n) {
+        this.letra = caracter;
         this.matriz = new char[n][n];
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
@@ -39,12 +40,10 @@ public class Figura {
             for (int j = 0; j < matriz[i].length; j++) {
                 if (i == 0 || i == matriz.length - 1) {
                     cadena += matriz[i][j] + " ";
+                } else if (j == 0 || j == matriz[i].length - 1) {
+                    cadena += matriz[i][j] + " ";
                 } else {
-                    if (j == 0 || j == matriz[i].length - 1) {
-                        cadena += matriz[i][j] + " ";
-                    } else {
-                        cadena += " " + " ";
-                    }
+                    cadena += " " + " ";
                 }
             }
             cadena += "\n";
@@ -56,7 +55,13 @@ public class Figura {
         String cadena = "";
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
-                cadena += matriz[i][j] + " ";
+                if (i == j) {
+                    cadena += matriz[i][j] + " ";
+                } else if (i + j == matriz.length-1) {
+                    cadena += matriz[i][j] + " ";
+                } else {
+                    cadena += " " + " ";
+                }
             }
             cadena += "\n";
         }

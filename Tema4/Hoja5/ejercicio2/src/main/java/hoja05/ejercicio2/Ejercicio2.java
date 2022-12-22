@@ -12,7 +12,14 @@ package hoja05.ejercicio2;
 public class Ejercicio2 {
 
     public static void main(String[] args) {
+        //Primer objeto
         Sopa sopa1 = new Sopa();
         sopa1.mostar();
+        System.out.println("");
+        //Segundo objeto
+        Sopa sopa2 = new Sopa(20,25);
+        sopa2.mostar();
+        sopa2.setPalabra("Rata", 2, 0, 1);
+        sopa2.mostar();
     }
 }

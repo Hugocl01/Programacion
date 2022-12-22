@@ -3,18 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
  */
 
-package hoja05.ejercicio1;
+package hoja06.ejercicio1;
 
 /**
  *
- * @author hugoc
+ * @author DAW102
  */
 public class Ejercicio1 {
 
     public static void main(String[] args) {
-        Figura n1 = new Figura('h',5);
-        System.out.println(n1.cuadrado());
-        System.out.println(n1.cuadradoVacio());
-        System.out.println(n1.aspa());
+        Almacen almacen1 = new Almacen(3);
+        almacen1.llenar();
+        almacen1.pedidos();
     }
 }
