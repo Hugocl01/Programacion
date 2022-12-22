@@ -1,6 +1,6 @@
 # Tema2-Objetos-Hoja09-ej2
 
-2.- Diseñar una clase llamada Alimento, con los atributos: nombre (String), grasas (int), hidratos(int), origenAnimal(boolean) y los métodos:
+Diseñar una clase llamada Alimento, con los atributos: nombre (String), grasas (int), hidratos(int), origenAnimal(boolean) y los métodos:
 + Un constructor que inicializa los atributos con todos los valores pasados como argumentos.
 + Métodos get.
 + Un método que devuelve el valor de todos los atributos.
