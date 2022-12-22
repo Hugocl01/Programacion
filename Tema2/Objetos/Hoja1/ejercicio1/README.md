@@ -1,6 +1,6 @@
 # Tema2-Objetos-Hoja01-ej1
 
-1.- Suponemos una clase CajaAhorro que permite mantener el registro de depósitos y giros de una cuenta.
+Suponemos una clase CajaAhorro que permite mantener el registro de depósitos y giros de una cuenta.
 ```
 public class CajaAhorro {
 
