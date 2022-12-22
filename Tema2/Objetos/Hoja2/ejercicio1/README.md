@@ -1,5 +1,5 @@
 # Tema2-Objetos-Hoja02-ej1
-1. Dada la siguiente clase:
+Dada la siguiente clase:
 ```
 public class Circulo {
     private double radio;   
