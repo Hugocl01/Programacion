@@ -1,6 +1,6 @@
 # Tema2-Objetos-Hoja04-ej3
 
-3.- Define una clase 'Monedero' que permita gestionar la cantidad de dinero de que una persona dispone en un momento dado. La clase deberá tener:
+Define una clase 'Monedero' que permita gestionar la cantidad de dinero de que una persona dispone en un momento dado. La clase deberá tener:
 + Un constructor que permitirá crear un monedero con una cantidad de dinero inicial.
 + Un método para meter dinero en el monedero
 + Otro para sacarlo
