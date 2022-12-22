@@ -1,6 +1,6 @@
 # Tema2-Objetos-Hoja03-ej1
 
-1.- Realiza una clase finanzas que convierta dólares a euros y viceversa. Como atributo tiene un número decimal para almacenar a como está el cambio entre ambas monedas.
+Realiza una clase finanzas que convierta dólares a euros y viceversa. Como atributo tiene un número decimal para almacenar a como está el cambio entre ambas monedas.
 Como constructores tiene:
 
 + Un constructor finanzas() por defecto, el cual establecerá el cambio Dolares-Euros en 1.06 (1 dólar son 1.06 euros)
