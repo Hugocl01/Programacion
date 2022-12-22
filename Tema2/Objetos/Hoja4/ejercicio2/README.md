@@ -1,6 +1,6 @@
 # Tema2-Objetos-Hoja04-ej2
 
-2.- Diseñar una clase llamada ‘coche’ con los atributos privados: matricula y velocidad y los métodos:
+Diseñar una clase llamada ‘coche’ con los atributos privados: matricula y velocidad y los métodos:
 + Un constructor que permita declarar objetos de tipo coche inicializado con la matricula y la velocidad pasados como argumentos.
 + Otro constructor que permita declarar objetos de tipo coche con la matricula, pasada como argumento y ponga la velocidad a 0.
 + Un método llamado acelera que incrementa la velocidad en el valor que pasamos como argumento, otro llamado frena idéntico pero que disminuye la velocidad, controlando siempre que la velocidad no puede ser menor de 0 ni mayor de 120.
