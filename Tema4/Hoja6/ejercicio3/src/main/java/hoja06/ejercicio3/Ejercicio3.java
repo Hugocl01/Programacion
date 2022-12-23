@@ -14,6 +14,7 @@ public class Ejercicio3 {
 
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
+        Agenda agenda1 = new Agenda(4);
         int opc;
         do {
             System.out.println("****Menu****");
@@ -27,13 +28,26 @@ public class Ejercicio3 {
             opc = teclado.nextInt();
             switch (opc) {
                 case 1 ->
+                    agenda1.insertar();
                 case 2 ->
-                case 3 ->
+                    agenda1.mostar();
+                case 3 -> {
+                    System.out.println("Introduce el nombre del contacto:");
+                    String nombre = new Scanner(System.in).nextLine();
+                    agenda1.buscar(nombre);
+                }
                 case 4 ->
-                case 5 ->
+                    System.out.println("Numero de contactos en la agenda: " + agenda1.getCont());
+                case 5 -> {
+                    System.out.println("Introduce el nombre del contacto:");
+                    String nombre = new Scanner(System.in).nextLine();
+                    agenda1.modificar(nombre);
+                }
                 case 6 ->
+                    System.out.println("Has salido del programa");
                 default ->
-            }
+                    System.out.println("No has introducido una opcion dentro del rango:");
+            };
         } while (opc != 6);
     }
 }
