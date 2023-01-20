@@ -1,0 +1,231 @@
+----Apuntes----
+
+Clase arrays de Java
+
+Algunos métodos interesantes son los siguientes:
+
+    	fill: Permite rellenar todo un array unidimensional con un determinado valor. Sus argumentos son el array a 
+	rellenar y el valor deseado:
+
+   	 	int valores[]=new int[23]; 
+    		Arrays.fill(valores,-1);//Todo el array vale -1 
+
+    	También permite decidir desde que índice hasta qué índice rellenamos
+
+    		int valores[]=new int[23]; 
+    		Arrays.fill(valores,5,8,-1);//Del elemento 5 al 7 valdrán -1
+------------------------------------------------------------------------------------------------------------------------
+    	sort: Permite ordenar un array en orden ascendente. Se pueden ordenar todo el array o bien desde un elemento a otro:
+
+    		int x[]={4,5,2,7,3,8,2,3,9,5}; 
+   		Arrays.sort(x,2,5); //El array queda {4 5 2 3 7 8 2 3 9 5} 
+    		Arrays.sort(x); //Estará completamente ordenado 
+------------------------------------------------------------------------------------------------------------------------
+    	equals: Compara dos arrays y devuelve true si son iguales. Se consideran iguales si son del mismo tipo, tamaño 
+	y contienen los mismos valores. A diferencia del operador de igualdad (==), este operador sí compara el contenido.
+
+    		int a[]= {2,3,4,5,6}; 
+    		int b[]= {2,3,4,5,6}; 
+    		int c[]=a; 
+    		System.out.println(a==b); //false 
+    		System.out.println(Arrays.equals(a,b)); //true 
+    		System.out.println(a==c); //true 
+    		System.out.println(Arrays.equals(a,c)); //true 
+------------------------------------------------------------------------------------------------------------------------
+    	binarySearch: Permite buscar un elemento de forma ultrarrápida en un array ordenado (en un array desordenado sus 
+	resultados son impredecibles). Devuelve el índice en el que está colocado el elemento. es el algoritmo de búsqueda
+	dicotómica también llamado búsqueda binaria que comprueba si la clave de búsqueda se encuentra en el elemento 
+	central de la tabla. Con esta información sabe si debe seguir buscando en la primera o segunda mitad del array. 
+	El proceso se repite con la mitad, donde es posible encontrar la clave de búsqueda, que se subdivide de nuevo 
+	en dos partes. El algoritmo continúa hasta encontrar la clave de búsqueda o hasta que no existan más elementos 
+	donde buscar.
+
+		int x[]={1,2,3,4,5,6,7,8,9,10,11,12}; 
+		Arrays.sort(x); 
+		System.out.println(Arrays.binarySearch(x,8)); //Escribe: 7 
+------------------------------------------------------------------------------------------------------------------------
+    	copyOf: Obtiene una copia de un array. Recibe dos parámetros: el primero es el array a copiar y el segundo el 
+	tamaño que tendrá el array resultante. De modo que si el tamaño es menor que el del array original, sólo obtiene 
+	copia de los primeros elementos (tantos como indique el tamaño); si el tamaño es mayor que el original, devuelve 
+	un array en el que los elementos que superan al original se rellenan con ceros o con datos de tipo null.
+
+    		int a[] = {1,2,3,4,5,6,7,8,9}; 
+   		 int b[]=Arrays.copyOf(a, a.length);//b es {1,2,3,4,5,6,7,8,9} 
+    		int c[]=Arrays.copyOf(a, 12); //c es {1,2,3,4,5,6,7,8,9,0,0,0} 
+    		int d[]=Arrays.copyOf(a, 3); //d es {1,2,3}
+------------------------------------------------------------------------------------------------------------------------
+	copyOfRange: Funciona como la anterior, sólo que indica con dos números de qué elemento a qué elemento se 
+	hace la copia:
+
+    		int a[] = {1,2,3,4,5,6,7,8,9}; 
+    		int b[]=Arrays.copyOfRange(a, 3,6); //b vale {4,5,6} 
+------------------------------------------------------------------------------------------------------------------------
+
+Metodo Main
+
+El método main siempre lo hemos situado en una clase independiente destinada exclusivamente a contener este método.
+No es obligatorio. La clase con el método main podría tratarse como una clase más y el método main como un método más.
+El método main() es usado por la JVM para iniciar la ejecución de cualquier programa Java.
+El método main será siempre un método público, ya que por su papel de iniciador de la aplicación no tendría sentido 
+que fuera privado y por tanto inaccesible desde el exterior.
+El método main siempre es un método estático, ya que cuando se invoca por el motor en tiempo de ejecución, 
+no existen objetos creados con anterioridad porque la ejecución del programa aún no ha comenzado. 
+Si un programa no ha comenzado, existen clases pero no objetos
+main siempre devuelve void (nulo) ya que no se devuelve ningún valor.
+Su parámetro de entrada siempre será un array de String. (String[] args).
+------------------------------------------------------------------------------------------------------------------------
+
+Fechas
+
+Localización
+
+En el paquete java.time resolvemos los problemas con : -fechas con LocalDate -horas con LocalTime 
+-la combinación de fecha y hora con LocalDateTime.
+Además, los conceptos de Period para determinar el periodo entre dos fechas y Duration para determinar la duración 
+entre dos horas.
+------------------------------------------------------------------------------------------------------------------------
+
+LocalDate
+
+LocalDate representa la fecha sin la hora.
+
+	LocalDate localDate = LocalDate.now();
+	System.out.println(localDate.toString());
+	LocalDate localDateOf = LocalDate.of(2022, 10, 10);
+	System.out.println(localDateOf.toString()); // 2022-10-10
+
+Puedes además sumar o restar días fácilmente:
+
+	LocalDate datePlus = localDateOf.plusDays(7);
+	System.out.println(datePlus.toString());  // 2022-10-17
+	LocalDate dateMinus = localDateOf.minusDays(7);
+	System.out.println(dateMinus.toString()); // 2022-10-03
+
+Determinar cuál es fecha esta es anterior o posterior respecto a otra:
+
+	boolean isBefore = LocalDate.of(2022, 10, 10).isBefore(LocalDate.of(2022, 8, 20));
+	System.out.println(isBefore); // false
+	boolean isAfter = LocalDate.of(2022, 10, 10).isAfter(LocalDate.of(2022, 8, 20));
+	System.out.println(isAfter); // true
+------------------------------------------------------------------------------------------------------------------------
+
+LocalTime
+
+LocalTime es similar a LocalDate en su uso y representa la hora sin la fecha.
+
+	LocalTime localTime = LocalTime.now();
+	System.out.println(localTime);
+	LocalTime hour = LocalTime.of(6, 30);
+	System.out.println(hour); // 06:30
+
+Sumar o restar horas o cualquier otro tipo de unidad como segundos
+
+	LocalTime localTimePlus = hour.plus(1, ChronoUnit.HOURS);
+	System.out.println(localTimePlus); // 07:30
+	LocalTime localTimeMinus = hour.minus(60, ChronoUnit.SECONDS);
+	System.out.println(localTimeMinus); // 06:29
+
+También podemos comparar para saber si alguna hora es mayor o no que otra.
+
+	boolean isBeforeHour = LocalTime.parse("08:30").isBefore(LocalTime.parse("10:20"));
+	System.out.println(isBeforeHour); // true
+------------------------------------------------------------------------------------------------------------------------
+
+LocalDateTime
+
+LocalDateTime es la combinación de la fecha y la hora. Al igual que con LocalDate y LocalTime puedes crear instancias
+
+	LocalDateTime localDateTime = LocalDateTime.now();
+	System.out.println(localDateTime);
+	LocalDateTime localDateTimeOf = LocalDateTime.of(2022, Month.AUGUST, 20, 8, 30);
+	System.out.println(localDateTimeOf); // 2022-08-20T08:30
+
+Igual que como vimos en LocalDate y LocalTime, puedes sumar o restar fácilmente utilizando diferentes unidades de tiempo
+
+	LocalDateTime localDateTimePlus = localDateTimeOf.plusDays(5);
+	System.out.println(localDateTimePlus); // 2022-08-25T08:30
+	LocalDateTime localDateTimeMinus = localDateTimePlus.minusMinutes(10);
+	System.out.println(localDateTimeMinus); // 2022-08-25T08:20
+------------------------------------------------------------------------------------------------------------------------
+
+Period
+
+Con la clase Period puedes obtener la diferencia entre dos fechas o utilizarlo para modificar valores de alguna fecha.
+
+	LocalDate fechaInicio = LocalDate.of(2022, 10, 10);
+	LocalDate fechaFin = fechaInicio.plus(Period.ofDays(500)); 
+	int diffDays = Period.between(fechaInicio, fechaFin).getDays();
+	int diffMonths =Period.between(fechaInicio, fechaFin).getMonths();
+	int diffYears =Period.between(fechaInicio, fechaFin).getYears();
+	System.out.println("Años: "+diffYears+" Meses: "+diffMonths+" Dias: "+diffDays); 
+	long aux=ChronoUnit.DAYS.between(fechaInicio, fechaFin);
+	System.out.println("Dias entre dos fechas: "+aux);
+------------------------------------------------------------------------------------------------------------------------
+
+Duration
+
+Duration es el equivalente a Period pero para las horas.
+
+	LocalTime startLocalTime = LocalTime.of(8, 30);
+	LocalTime endLocalTime = startLocalTime.plus(Duration.ofHours(3));  // 11:30
+	long diffSeconds = Duration.between(startLocalTime, endLocalTime).getSeconds();
+	System.out.println(diffSeconds); // 10800 seconds
+------------------------------------------------------------------------------------------------------------------------
+
+DateTimeFormatter
+
+Existen varias maneras de dar formato a una fecha. Nosotros vamos a aprender a utilizar los patrones. De este modo, 
+podremos darle formato a un objeto de tipo LocalDate, LocalTime o LocalDateTime. Se hace a través de un String donde se 
+le puede dar la siguiente información:
+
+Letras que simbolizan un elemento temporal (hh, mm, ss, yy, MM,…). La lista completa está en la página web de Oracle.
+Texto entre comillas simples, que aparecen tal cual al imprimir.
+Signos de puntuación.
+
+	LocalTime hora = LocalTime.now();
+	DateTimeFormatter f = DateTimeFormatter.ofPattern("'Son las' h 'y' mm");
+	System.out.println(hora.format(f));
+
+También se puede utilizar para introducir por teclado el valor de una fecha con un formato predeterminado:
+
+	Scanner teclado=new Scanner(System.in);
+	System.out.println("Introduce la fecha con formato dd-mm-yyyy:");
+	DateTimeFormatter f= DateTimeFormatter.ofPattern("dd-MM-yyyy");
+	LocalDate fecha=LocalDate.parse(teclado.nextLine(), f);
+
+Si queremos transformar las fechas a castellano podemos utilizar el método withLocale() de la clase DateTimeFormatter 
+que toma como argumento un objeto de la clase java.util.locale
+
+	LocalDateTime fechaConHora=LocalDateTime.now();
+	DateTimeFormatter esDateFormatLargo= DateTimeFormatter
+  	.ofPattern("EEEE, dd 'de' MMMM 'de' yyyy 'a las' hh:mm:ss")
+  	.withLocale(new Locale("es", "ES"));
+	System.out.println("Formato español (largo, localizado): " + fechaConHora.format(esDateFormatLargo));
+
+Fíjate en dos cosas:
+
+En primer lugar creamos el patrón que nos interesa usando EEEE para el nombre largo del día de la semana mira la
+tabla de formatos y “escapeamos” todos los fragmentos que no son formato, como el 'de' y el 'a las' usando una 
+comilla simple.
+Instanciamos un nuevo objeto Locale pasándole como parámetros el código ISO 639 de idioma y el código ISO 3166 
+de país.
+Así somos más explícitos (español de España, pero podría haber sido español de México o de otro país hispanohablante). 
+Si le hubiésemos pasado tan solo el primer parámetro funcionaría con la versión más neutra del idioma 
+(simplemente español), que en esta ocasión no tendría diferencia alguna.
+
+Finalmente, nos faltaría saber cómo formatear la fecha con el formato actual del usuario de la aplicación, en lugar 
+de uno arbitrario elegido por nosotros. Para ello usaremos la misma técnica, pero antes tenemos que averiguar el idioma y 
+país del usuario actual.
+
+	LocalDateTime fechaConHora=LocalDateTime.now();
+	String idiomaLocal = System.getProperty("user.language");
+	String paisLocal = System.getProperty("user.country");
+	System.out.println("Formato actual del sistema (" + idiomaLocal + "-" + paisLocal + "): "
+  	+ fechaConHora.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)
+  	.withLocale(new Locale(idiomaLocal, paisLocal)));
+
+La única cosa nueva que tenemos aquí es que, en lugar de definir el formato manualmente, hacemos uso del valor SHORT
+del enumerado FormatStyle para expresar de manera genérica el formato corto de fecha y hora. En este caso no podríamos
+haber utilizado el formato largo (LONG) ni completo (FULL) porque necesitan la información de zona horaria, que nuestra 
+fecha de ejemplo no tiene por ser un LocalDateTime y no un ZonedDateTime.
+
