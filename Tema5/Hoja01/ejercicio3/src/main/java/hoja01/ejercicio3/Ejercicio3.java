@@ -13,8 +13,8 @@ public class Ejercicio3 {
 
     public static void main(String[] args) {
         System.out.println("Añadimos la bombilla y la pancha");
-        AparatoElectrico bombilla = new AparatoElectrico(150,false);
-        AparatoElectrico plancha = new AparatoElectrico(2000,false);
+        AparatoElectrico bombilla = new AparatoElectrico(150);
+        AparatoElectrico plancha = new AparatoElectrico(2000);
         System.out.println("Encendemos la bombilla y la plancha");
         bombilla.enciende();
         plancha.enciende();

@@ -14,12 +14,13 @@ public class AparatoElectrico {
     private double potencia;
     private boolean encendido;
 
-    public AparatoElectrico(double potencia, boolean encendido) {
+    public AparatoElectrico(double potencia) {
         this.potencia = potencia;
-        this.encendido = encendido;
+        this.encendido = false;
         System.out.println("Consumo total: " + consumoTotal + "W");
     }
-
+    
+    //Metodo estatico, se puede usar sin crear un objeto
     public static int consumo() {
         return consumoTotal;
     }
@@ -28,6 +29,8 @@ public class AparatoElectrico {
         if (!encendido) {
             encendido = true;
             consumoTotal += potencia;
+        } else {
+            System.out.println("Ya esta encendido");
         }
     }
 
@@ -35,6 +38,8 @@ public class AparatoElectrico {
         if (encendido) {
             encendido = false;
             consumoTotal -= potencia;
+        } else {
+            System.out.println("Ya esta apagado");
         }
     }
 }
