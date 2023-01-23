@@ -8,6 +8,13 @@ package hoja02.ejercicio2;
  *
  * @author DAW102
  */
-public class EnPromocion extends Articulo{
-    
+public class EnPromocion extends Articulo {
+
+    private int descuento;
+
+    public EnPromocion(int descuento, int codigo, String descripcion, double precio) {
+        super(codigo, descripcion, precio);
+        this.descuento = descuento;
+    }
+
 }

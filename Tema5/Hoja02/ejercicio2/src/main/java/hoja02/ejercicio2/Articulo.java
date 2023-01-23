@@ -13,6 +13,11 @@ public class Articulo {
     protected int codigo;
     protected String descripcion;
     protected double precio;
-    
-    
+
+    public Articulo(int codigo, String descripcion, double precio) {
+        this.codigo = codigo;
+        this.descripcion = descripcion;
+        this.precio = precio;
+    }
+
 }
