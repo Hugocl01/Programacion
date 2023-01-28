@@ -11,7 +11,10 @@ package hoja02.ejercicio2;
 public class Ejercicio2 {
 
     public static void main(String[] args) {
-        int perecederos[];
-        Perecedero perecederos = new Perecedero(1,2023,123456,"Descripcion",3.45);
+        
+        for (int i = 0; i < 5; i++) {
+            Perecedero perecederos[i] = new Perecedero(1,2023,123456,
+                "Descripcion",3.45);
+        }
     }
 }
