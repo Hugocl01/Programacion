@@ -10,14 +10,46 @@ package hoja02.ejercicio2;
  */
 public class Articulo {
 
-    protected int codigo;
+    protected String codigo;
     protected String descripcion;
     protected double precio;
 
-    public Articulo(int codigo, String descripcion, double precio) {
+    public Articulo() {
+    }
+
+    public Articulo(String codigo, String descripcion, double precio) {
         this.codigo = codigo;
         this.descripcion = descripcion;
         this.precio = precio;
     }
 
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    @Override
+    public String toString() {
+        return "Articulo{" + "codigo=" + codigo + ", descripcion=" + descripcion + ", precio=" + precio + '}';
+    }
+    
 }

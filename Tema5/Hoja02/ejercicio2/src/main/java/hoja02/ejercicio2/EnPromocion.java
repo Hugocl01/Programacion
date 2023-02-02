@@ -12,9 +12,22 @@ public class EnPromocion extends Articulo {
 
     private int descuento;
 
-    public EnPromocion(int descuento, int codigo, String descripcion, double precio) {
-        super(codigo, descripcion, precio);
-        this.descuento = descuento;
+    public EnPromocion() {
     }
 
+    public EnPromocion(int descuento, String codigo, String descripcion, double precio) {
+        super(codigo, descripcion, precio);
+        this.descuento = descuento;
+        this.precio = this.precio - this.precio * descuento / 100;
+    }
+
+    public int getDescuento() {
+        return descuento;
+    }
+
+    public void setDescuento(int descuento) {
+        this.descuento = descuento;
+    }
+    
+    
 }
