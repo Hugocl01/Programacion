@@ -6,6 +6,7 @@ package hoja04.ejercicio1;
 
 import java.time.LocalDate;
 import java.time.Month;
+import java.util.Locale;
 
 /**
  *
@@ -17,10 +18,10 @@ public abstract class Publicacion {
     protected String autor;
     protected LocalDate fecha;
 
-    public Publicacion(String titulo, String autor, int dia, int mes, int anio) {
+    public Publicacion(String titulo, String autor, int anio, int mes, int dia) {
         this.titulo = titulo;
         this.autor = autor;
-        this.fecha = LocalDate.of(dia, mes, anio);
+        this.fecha = LocalDate.of(anio, mes, dia);
     }
 
     @Override
