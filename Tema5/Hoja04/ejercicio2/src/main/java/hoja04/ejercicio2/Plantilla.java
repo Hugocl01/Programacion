@@ -25,18 +25,40 @@ public class Plantilla {
     }
 
     public String informacion() {
-        String cadena = "";
+        String cadena = "Plantilla:\n";
         for (int i = 0; i < cont; i++) {
             cadena.concat(empleados[i].toString() + "\n");
         }
         return cadena;
     }
-    
+
     public Programador masLineas() {
-        int mayor=0;
+        int mayor = 0;
         for (int i = 0; i < cont; i++) {
-            if (empleados[i] instanceof Programador && empleados[i].) {
-                
+            if (empleados[i] instanceof Programador programador) {
+                if (programador.getLineasDeCodigoPorHora() > mayor) {
+                    mayor = i;
+                }
+            }
+        }
+        Programador prog = (Programador) empleados[mayor];
+        return prog;
+    }
+
+    public String infoSenior() {
+        String cadena = "";
+        for (int i = 0; i < cont; i++) {
+            if (empleados[i].edad > 35) {
+                cadena.concat(empleados[i].toString() + "\n");
+            }
+        }
+        return cadena;
+    }
+
+    public void aumentoProgramadores() {
+        for (int i = 0; i < cont; i++) {
+            if (empleados[i] instanceof Programador) {
+                empleados[i].salario += empleados[i].salario * 20 / 100;
             }
         }
     }

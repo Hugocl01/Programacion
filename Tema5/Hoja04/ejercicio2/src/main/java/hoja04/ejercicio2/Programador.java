@@ -22,13 +22,20 @@ public class Programador extends Empleado{
         this.lineasDeCodigoPorHora = new Scanner(System.in).nextInt();
     }
 
-    public Programador(int lineasDeCodigoPorHora, String lenguajeDominante, String nombre, String departamento, int edad, boolean casado, double salario) {
+    public Programador(int lineasDeCodigoPorHora, String lenguajeDominante, 
+            String nombre, String departamento, int edad, boolean casado, double salario) {
         super(nombre, departamento, edad, casado, salario);
         this.lineasDeCodigoPorHora = lineasDeCodigoPorHora;
         this.lenguajeDominante = lenguajeDominante;
     }
-    
-    
+
+    public int getLineasDeCodigoPorHora() {
+        return lineasDeCodigoPorHora;
+    }
+
+    public String getLenguajeDominante() {
+        return lenguajeDominante;
+    }
     
     
 }

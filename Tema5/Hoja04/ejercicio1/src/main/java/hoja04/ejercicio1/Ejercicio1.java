@@ -4,6 +4,7 @@
  */
 package hoja04.ejercicio1;
 
+import java.time.LocalDate;
 import java.util.Scanner;
 
 /**
@@ -73,25 +74,44 @@ public class Ejercicio1 {
         }
         
         //Visualizar las 3 primeras letras del disco con mas minutos
+        int mayor = 0;
         for (int i = 0; i < cont; i++) {
-            if (publicaciones[i] instanceof Disco) {
-                publicaciones[i]
+            if (publicaciones[i] instanceof Disco disco) {
+                //Disco disco=(Disco)publicaciones[i];
+                if (disco.getDuracionMinutos() > mayor) {
+                    mayor = i;
+                }
             }
         }
+        System.out.println("Titulo: " + publicaciones[mayor].titulo.substring(0, 3));
+        System.out.println("Autor: " + publicaciones[mayor].autor);
         
         /*
         Visualizar el titulo y el autor del los libros editados en este mes y
         que tenga mas de 1000 paginas */
         for (int i = 0; i < cont; i++) {
-            if (publicaciones[i] instanceof Libro) {
-                
+            if (publicaciones[i] instanceof Libro libro) {
+                if (libro.fecha.getMonth() == LocalDate.now().getMonth()
+                        && libro.getNumPaginas() > 1000) {
+                    int numeroLibros = 1;
+                    System.out.println("Libro " + numeroLibros);
+                    System.out.println("Titulo: " + publicaciones[i].titulo);
+                    System.out.println("Autor: " + publicaciones[i].autor);
+                    numeroLibros++;
+                }
             }
         }
         
         //Visualizar titulo y autor de los discos editados los ultimos 2 años
+        int numeroDisco = 1;
         for (int i = 0; i < cont; i++) {
-            if (publicaciones[i] instanceof Disco) {
-                
+            if (publicaciones[i] instanceof Disco disco) {
+                if (disco.fecha.getYear() >= LocalDate.now().getYear() - 2) {
+                    System.out.println("Libro " + numeroDisco);
+                    System.out.println("Titulo: " + publicaciones[i].titulo);
+                    System.out.println("Autor: " + publicaciones[i].autor);
+                    numeroDisco++;
+                }
             }
         }
         
