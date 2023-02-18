@@ -18,8 +18,10 @@ public class Programador extends Empleado{
     public Programador() {
         super();
         System.out.println("****Datos del programador****");
-        System.out.println("Introduce las lineas de codigo por hora");
+        System.out.println("Introduce las lineas de codigo por hora:");
         this.lineasDeCodigoPorHora = new Scanner(System.in).nextInt();
+        System.out.println("Introduce el lenguale dominante:");
+        this.lenguajeDominante = new Scanner(System.in).nextLine();
     }
 
     public Programador(int lineasDeCodigoPorHora, String lenguajeDominante, 

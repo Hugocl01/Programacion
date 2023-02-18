@@ -19,8 +19,11 @@ public class Plantilla {
     }
 
     public void insertarEmpleado(Empleado emp) {
-        if (cont + 1 < empleados.length) {
+        if (cont  < empleados.length) {
             empleados[cont] = emp;
+            cont++;
+        }else{
+            System.out.println("Error");
         }
     }
 
@@ -33,23 +36,27 @@ public class Plantilla {
     }
 
     public Programador masLineas() {
+        Programador prog = null;
         int mayor = 0;
+        int posProg = 0;
         for (int i = 0; i < cont; i++) {
             if (empleados[i] instanceof Programador programador) {
                 if (programador.getLineasDeCodigoPorHora() > mayor) {
-                    mayor = i;
+                    mayor = programador.getLineasDeCodigoPorHora();
+                    prog = (Programador) empleados[i];
                 }
             }
         }
-        Programador prog = (Programador) empleados[mayor];
         return prog;
     }
 
     public String infoSenior() {
         String cadena = "";
         for (int i = 0; i < cont; i++) {
-            if (empleados[i].edad > 35) {
-                cadena.concat(empleados[i].toString() + "\n");
+            if (empleados[i] instanceof Programador prog) {
+                if(prog.edad > 35) {
+                    cadena.concat(prog.toString() + "\n");
+                }
             }
         }
         return cadena;
@@ -57,7 +64,8 @@ public class Plantilla {
 
     public void aumentoProgramadores() {
         for (int i = 0; i < cont; i++) {
-            if (empleados[i] instanceof Programador) {
+            if (empleados[i] instanceof Programador prog 
+                    && prog.getLenguajeDominante().equalsIgnoreCase("java") ) {
                 empleados[i].salario += empleados[i].salario * 20 / 100;
             }
         }

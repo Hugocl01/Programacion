@@ -61,13 +61,19 @@ public class Empleado {
     }
 
     public void imprimir() {
+        String casadoAux = "";
+        if (casado) {
+            casadoAux = "casado";
+        } else {
+            casadoAux = "soltero";
+        }
         System.out.println("Empleado{" + "nombre=" + nombre + ", departamento="
-                + departamento + ", edad=" + edad + ", casado=" + casado
+                + departamento + ", edad=" + edad + ", casado=" + casadoAux
                 + ", salario=" + salario + '}');
     }
 
     public void aumentarSalario(int porcentaje) {
         this.salario += this.salario * porcentaje / 100;
     }
-    
+
 }

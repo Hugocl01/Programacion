@@ -92,6 +92,7 @@ public class Ejercicio1 {
         for (int i = 0; i < cont; i++) {
             if (publicaciones[i] instanceof Libro libro) {
                 if (libro.fecha.getMonth() == LocalDate.now().getMonth()
+                        && libro.fecha.getYear() == LocalDate.now().getYear()
                         && libro.getNumPaginas() > 1000) {
                     int numeroLibros = 1;
                     System.out.println("Libro " + numeroLibros);

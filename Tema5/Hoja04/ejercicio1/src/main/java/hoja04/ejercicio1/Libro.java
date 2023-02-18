@@ -5,6 +5,8 @@
 package hoja04.ejercicio1;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 /**
  *
@@ -37,8 +39,11 @@ public class Libro extends Publicacion {
 
     @Override
     public String toString() {
+        //Fecha en formato español/España
+        DateTimeFormatter f = DateTimeFormatter.ofPattern("dd 'de' MMMM 'de' yyyy")
+                .withLocale(new Locale("es","ES"));
         return "Libro{" + " titulo: " + titulo + " autor: " + autor + " fecha: "
-                + fecha + " numPaginas=" + numPaginas + '}';
+                + f + " numPaginas=" + numPaginas + '}';
     }
 
 }
