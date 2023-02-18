@@ -11,11 +11,11 @@ package hoja10.ejercicio1;
 public abstract class Guerrero {
 
     //Atributos
-    private String nombre;
-    private int edad;
-    private int fuerza;
-    private boolean herido;
-    private boolean muerto;
+    protected String nombre;
+    protected int edad;
+    protected int fuerza;
+    protected boolean herido;
+    protected boolean muerto;
 
     //Constructores
     public Guerrero(String nombre, int edad, int fuerza) {
@@ -37,7 +37,7 @@ public abstract class Guerrero {
     public Guerrero() {
         this("GuerreroX", 15, 1);
     }
-    
+
     public Guerrero(Guerrero a) {
         this.nombre = a.nombre;
         this.edad = a.edad;
@@ -45,10 +45,10 @@ public abstract class Guerrero {
         this.herido = a.herido;
         this.muerto = a.muerto;
     }
-    
+
     //Metodo abstracto
     public abstract boolean retirarse();
-    
+
     //Metodos set y get
     public String getNombre() {
         return nombre;
@@ -114,5 +114,5 @@ public abstract class Guerrero {
         }
         return comprobar;
     }
-    
+
 }

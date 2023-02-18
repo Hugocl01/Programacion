@@ -8,6 +8,13 @@ package hoja10.ejercicio1;
  *
  * @author DAW102
  */
-public class Troyano {
-    
+public class Troyano extends Guerrero {
+
+    public Troyano(String nombre, int edad, int fuerza) {
+        super(nombre, edad, fuerza);
+    }
+
+    public boolean retirarse() {
+        return false;
+    }
 }
