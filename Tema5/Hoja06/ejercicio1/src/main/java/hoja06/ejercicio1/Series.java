@@ -20,6 +20,6 @@ public interface Series {
     }
     
     default void nombreInterfaz(){
-        System.out.println("Nombre de la inteefaz: ");
+        System.out.println("Nombre de la interfaz: Series");
     }
 }

@@ -6,28 +6,23 @@ package hoja06.ejercicio1;
 
 /**
  *
- * @author DAW102
+ * @author hugoc
  */
-public class DeDos implements Series {
-    //Atributos
+public class DeTres implements Series {
+
+    //Atributos//Atributos
     private int valor;
-    private int anterior;
 
     //Constructor
-    public DeDos() {
+    public DeTres() {
         this.valor = inicio;
-        this.anterior = inicio - 2;
     }
 
     @Override
     public int getSiguiente() {
-        return valor += 2;
+        return valor + 2;
     }
 
-    public int getAnterior() {
-        return anterior - 2;
-    }
-    
     @Override
     public void reiniciar() {
         this.valor = 0;
@@ -35,8 +30,6 @@ public class DeDos implements Series {
 
     @Override
     public void setComenzar(int x) {
-        this.anterior = this.valor;
         this.valor = x;
     }
-    
 }
