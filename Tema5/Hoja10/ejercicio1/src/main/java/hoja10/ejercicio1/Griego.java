@@ -14,6 +14,7 @@ public class Griego extends Guerrero {
         super(nombre, edad, fuerza);
     }
 
+    @Override
     public boolean retirarse() {
         boolean retirada = false;
         if (this.herido && !this.muerto) {
