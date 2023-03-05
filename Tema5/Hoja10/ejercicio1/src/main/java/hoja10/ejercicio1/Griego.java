@@ -9,15 +9,17 @@ package hoja10.ejercicio1;
  * @author DAW102
  */
 public class Griego extends Guerrero {
-
+    
+    //Constructor
     public Griego(String nombre, int edad, int fuerza) {
-        super(nombre, edad, fuerza);
+        super(Estaticos.introducirNombre(), Estaticos.introducirEdad(), Estaticos.introducirFuerza());
     }
 
+    //Metodo
     @Override
     public boolean retirarse() {
         boolean retirada = false;
-        if (this.herido && !this.muerto) {
+        if (this.isHerido() && !this.isMuerto()) {
             retirada = true;
         }
         return retirada;

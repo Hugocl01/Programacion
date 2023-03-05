@@ -11,11 +11,11 @@ package hoja10.ejercicio1;
 public abstract class Guerrero {
 
     //Atributos
-    protected String nombre;
-    protected int edad;
-    protected int fuerza;
-    protected boolean herido;
-    protected boolean muerto;
+    private final String nombre; //final como constante
+    private int edad;
+    private int fuerza;
+    private boolean herido;
+    private boolean muerto;
 
     //Constructores
     public Guerrero(String nombre, int edad, int fuerza) {
@@ -54,10 +54,6 @@ public abstract class Guerrero {
         return nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
     public int getEdad() {
         return edad;
     }
@@ -91,7 +87,7 @@ public abstract class Guerrero {
     }
 
     //Metodos estaticos
-    public static boolean comprobarEdad(int e) {
+    protected static boolean comprobarEdad(int e) {
         boolean comprobar = (e >= 15 && e <= 60);
         try {
             if (!comprobar) {
@@ -103,7 +99,7 @@ public abstract class Guerrero {
         return comprobar;
     }
 
-    public static boolean comprobarFuerza(int f) {
+    protected static boolean comprobarFuerza(int f) {
         boolean comprobar = (f >= 1 && f <= 10);
         try {
             if (!comprobar) {
@@ -114,5 +110,8 @@ public abstract class Guerrero {
         }
         return comprobar;
     }
-
+    
+    public int compateTo(Guerrero o) {
+        return o.getFuerza();
+    }
 }
