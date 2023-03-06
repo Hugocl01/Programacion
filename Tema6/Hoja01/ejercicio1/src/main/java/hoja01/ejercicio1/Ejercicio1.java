@@ -19,6 +19,11 @@ public class Ejercicio1 {
         entero[4] = new Integer(5);
         Contenedor c1 = new Contenedor(entero);
         Integer int1 = new Integer(6);
+        System.out.println("Insertamos al principio");
         c1.insertarAlPrincipio(int1);
+        System.out.println("Insertamos al final");
+        c1.insertarAlFinal(int1);
+        System.out.println("Ordenamos");
+        c1.ordenar();
     }
 }

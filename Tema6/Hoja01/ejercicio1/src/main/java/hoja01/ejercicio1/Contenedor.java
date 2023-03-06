@@ -21,34 +21,44 @@ public class Contenedor<T> {
     }
 
     public void insertarAlPrincipio(T nuevo) {
-        if (objeto.length >= 0) {
-            objeto = Arrays.copyOf(objeto, objeto.length+1);
-            System.arraycopy(objeto, 0, objeto, 1, objeto.length-1);
-            objeto[0] = nuevo;
-            for (int i = 0; i < objeto.length; i++) {
-                System.out.println(objeto[i].toString());
-            }
+        objeto = Arrays.copyOf(objeto, objeto.length + 1);
+        System.arraycopy(objeto, 0, objeto, 1, objeto.length - 1);
+        objeto[0] = nuevo;
+        for (int i = 0; i < objeto.length; i++) {
+            System.out.println(objeto[i].toString());
+
         }
     }
-    
+
     public void insertarAlFinal(T nuevo) {
-        if (objeto.length >= 0) {
-            
+        objeto = Arrays.copyOf(objeto, objeto.length + 1);
+        System.arraycopy(objeto, 0, objeto, 0, objeto.length - 1);
+        objeto[objeto.length-1] = nuevo;
+        for (int i = 0; i < objeto.length; i++) {
+            System.out.println(objeto[i].toString());
+
         }
     }
-    
+
     public T extraerDelPrincipio() {
-       T aux = objeto[0];
-       return aux;
-    } 
-    
+        T aux = objeto[0];
+        return aux;
+    }
+
     public void ordenar() {
         Arrays.sort(objeto);
+        for (int i = 0; i < objeto.length; i++) {
+            System.out.println(objeto[i]);
+        }
     }
-    
+
     @Override
     public String toString() {
-        return "Contenedor{" + "objeto=" + objeto + '}';
+        String cadena="";
+        for (int i = 0; i < objeto.length; i++) {
+            cadena += objeto[i]+ ", ";
+        }
+        return "Contenedor{" + "objeto=" + cadena + '}';
     }
-    
+
 }
